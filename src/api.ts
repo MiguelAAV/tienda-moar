@@ -8,7 +8,7 @@ export async function apiFetch(
   const headers = new Headers(options.headers || {});
   headers.set("Content-Type", "application/json");
 
-  // 👉 Añadir token JWT si existe
+  //  Adjuntar token JWT si existe
   const token = localStorage.getItem("token");
   if (token) {
     headers.set("Authorization", `Bearer ${token}`);
@@ -20,14 +20,26 @@ export async function apiFetch(
   });
 
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(text || `Error HTTP ${res.status}`);
+    const textError = await res.text();
+    throw new Error(textError || `Error HTTP ${res.status}`);
   }
 
-  // No content
+  // No content (DELETE 204, etc.)
   if (res.status === 204) return null;
 
-  return res.json();
+  //  Manejar respuestas sin JSON
+  const text = await res.text();
+  if (!text) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    // Por si algún endpoint devuelve texto plano
+    return text as unknown;
+  }
 }
+
 
 
