@@ -1,0 +1,18 @@
+// src/main/java/com/example/pweb_backend/repository/UserRepository.java
+package com.example.pweb_backend.repository;
+
+import com.example.pweb_backend.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    Optional<User> findByEmail(String email);
+
+    boolean existsByEmail(String email);
+
+    boolean existsByRut(String rut);
+}
+
+
