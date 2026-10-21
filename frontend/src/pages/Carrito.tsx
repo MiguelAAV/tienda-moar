@@ -137,6 +137,9 @@ export default function Carrito() {
                         objectFit: 'cover',
                         borderRadius: 8,
                       }}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=500&auto=format&fit=crop&q=80";
+                      }}
                     />
                     <div>
                       <div className="fw-semibold">{product.nombre}</div>

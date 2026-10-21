@@ -58,14 +58,13 @@ function mapFromApi(p: ProductApi): Product {
 
 // De Product (formulario admin / UI) -> payload para backend
 function mapToApi(p: Product): Omit<ProductApi, "id"> {
-  let num: number;
+  let num: number = 0;
 
-  if (typeof p.precioNum === "number") {
-    num = p.precioNum;
-  } else {
-    const raw =
-      typeof p.precio === "string" ? p.precio.replace(/\D/g, "") : "0";
+  if (typeof p.precio === "string" && p.precio.trim() !== "") {
+    const raw = p.precio.replace(/\D/g, "");
     num = Number(raw) || 0;
+  } else if (typeof p.precioNum === "number") {
+    num = p.precioNum;
   }
 
   return {

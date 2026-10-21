@@ -47,6 +47,13 @@ export default function AdminDashboard() {
         ...prev,
         stock: Number(value),
       }));
+    } else if (name === "precio") {
+      const cleanNum = Number(value.replace(/\D/g, "")) || 0;
+      setForm((prev) => ({
+        ...prev,
+        precio: value,
+        precioNum: cleanNum,
+      }));
     } else if (name === "liberado") {
       setForm((prev) => ({
         ...prev,
@@ -84,7 +91,10 @@ export default function AdminDashboard() {
     setEditing(product);
     setForm({
       ...product,
-      precio: product.precio || "",
+      precio: product.precioNum
+        ? String(product.precioNum)
+        : (product.precio ? product.precio.replace(/\D/g, "") : ""),
+      precioNum: product.precioNum,
       imagen: product.imagen || "",
       stock: product.stock ?? 0,
       liberado: product.liberado ?? "LIBERADO",

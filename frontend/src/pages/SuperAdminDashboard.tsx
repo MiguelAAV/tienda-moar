@@ -205,6 +205,7 @@ export default function SuperAdminDashboard() {
         </h2>
         <form className="d-grid gap-2" style={{ maxWidth: 420 }} onSubmit={handleSubmit}>
           <input
+            id="admin-nombre"
             className="form-control"
             type="text"
             name="nombre"
@@ -213,6 +214,7 @@ export default function SuperAdminDashboard() {
             onChange={handleChange}
           />
           <input
+            id="admin-apellido"
             className="form-control"
             type="text"
             name="apellido"
@@ -221,6 +223,7 @@ export default function SuperAdminDashboard() {
             onChange={handleChange}
           />
           <input
+            id="admin-email"
             className="form-control"
             type="email"
             name="email"
@@ -229,6 +232,7 @@ export default function SuperAdminDashboard() {
             onChange={handleChange}
           />
           <input
+            id="admin-telefono"
             className="form-control"
             type="text"
             name="telefono"
@@ -237,6 +241,7 @@ export default function SuperAdminDashboard() {
             onChange={handleChange}
           />
           <input
+            id="admin-password"
             className="form-control"
             type="password"
             name="password"
@@ -264,7 +269,7 @@ export default function SuperAdminDashboard() {
           </div>
 
           <div className="d-flex gap-2 mt-2">
-            <button className="btn btn-primary" type="submit" disabled={saving}>
+            <button id="admin-submit-btn" className="btn btn-primary" type="submit" disabled={saving}>
               {saving
                 ? "Guardando..."
                 : editingId === null

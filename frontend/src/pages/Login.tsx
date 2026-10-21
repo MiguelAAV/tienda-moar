@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo_marcas/Moar3.jpg"; // <<--- tu logo aquí
@@ -7,23 +7,22 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
-  const { login, user, isAdmin, isSuperAdmin } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!user) return;
-
-    if (isSuperAdmin) navigate("/super-admin", { replace: true });
-    else if (isAdmin) navigate("/admin", { replace: true });
-    else navigate("/", { replace: true });
-  }, [user, isAdmin, isSuperAdmin, navigate]);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
-    const ok = await login(email, pass);
-    if (!ok) setError("Credenciales incorrectas");
+    const loggedUser = await login(email, pass);
+    if (!loggedUser) {
+      setError("Credenciales incorrectas");
+      return;
+    }
+
+    if (loggedUser.role === "SUPER_ADMIN") navigate("/super-admin", { replace: true });
+    else if (loggedUser.role === "ADMIN") navigate("/admin", { replace: true });
+    else navigate("/", { replace: true });
   };
 
   return (
@@ -48,6 +47,7 @@ export default function Login() {
 
         <form className="d-grid gap-3" onSubmit={onSubmit}>
           <input
+            id="login-email"
             className="form-control"
             placeholder="Correo electrónico"
             value={email}
@@ -55,6 +55,7 @@ export default function Login() {
           />
 
           <input
+            id="login-password"
             className="form-control"
             type="password"
             placeholder="Contraseña"
@@ -68,7 +69,7 @@ export default function Login() {
             </div>
           )}
 
-          <button className="btn btn-primary mt-2">Ingresar</button>
+          <button id="login-submit-btn" className="btn btn-primary mt-2">Ingresar</button>
         </form>
       </div>
     </div>

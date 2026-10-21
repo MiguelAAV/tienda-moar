@@ -5,6 +5,43 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tiendamoar</title>
+    <script>
+      // Polyfill for Selenium IDE Firefox (initKeyEvent deprecated in modern Firefox)
+      (function() {
+        if (typeof window !== 'undefined') {
+          function polyfillInitKeyEvent(type, bubbles, cancelable, viewArg, ctrlKey, altKey, shiftKey, metaKey, keyCode, charCode) {
+            try {
+              Object.defineProperty(this, 'type', { value: type, configurable: true });
+              Object.defineProperty(this, 'bubbles', { value: bubbles, configurable: true });
+              Object.defineProperty(this, 'cancelable', { value: cancelable, configurable: true });
+              Object.defineProperty(this, 'ctrlKey', { value: !!ctrlKey, configurable: true });
+              Object.defineProperty(this, 'altKey', { value: !!altKey, configurable: true });
+              Object.defineProperty(this, 'shiftKey', { value: !!shiftKey, configurable: true });
+              Object.defineProperty(this, 'metaKey', { value: !!metaKey, configurable: true });
+              Object.defineProperty(this, 'keyCode', { value: keyCode || 0, configurable: true });
+              Object.defineProperty(this, 'charCode', { value: charCode || 0, configurable: true });
+              Object.defineProperty(this, 'which', { value: keyCode || charCode || 0, configurable: true });
+            } catch (e) {}
+          }
+          if (window.KeyboardEvent && !window.KeyboardEvent.prototype.initKeyEvent) {
+            window.KeyboardEvent.prototype.initKeyEvent = polyfillInitKeyEvent;
+          }
+          if (window.Event && !window.Event.prototype.initKeyEvent) {
+            window.Event.prototype.initKeyEvent = polyfillInitKeyEvent;
+          }
+          if (document.createEvent) {
+            var origCreateEvent = document.createEvent.bind(document);
+            document.createEvent = function(eventType) {
+              var evt = origCreateEvent(eventType);
+              if (!evt.initKeyEvent) {
+                evt.initKeyEvent = polyfillInitKeyEvent;
+              }
+              return evt;
+            };
+          }
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

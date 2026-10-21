@@ -45,6 +45,7 @@ export default function Header() {
               (item, i) => (
                 <Link
                   key={i}
+                  id={`btn-nav-${item.toLowerCase()}`}
                   to={item === "Inicio" ? "/" : "/" + item.toLowerCase()}
                   className="nav-link"
                   style={{
@@ -66,6 +67,7 @@ export default function Header() {
 
             {/* Carrito */}
             <Link
+              id="btn-nav-cart"
               to="/carrito"
               className="btn position-relative"
               style={{
@@ -88,6 +90,7 @@ export default function Header() {
             {!isAuthenticated && (
               <>
                 <Link
+                  id="btn-nav-login"
                   to="/login"
                   className="btn"
                   style={{ border: "1px solid white", color: "white" }}
@@ -96,6 +99,7 @@ export default function Header() {
                 </Link>
 
                 <Link
+                  id="btn-nav-registro"
                   to="/registro"
                   className="btn"
                   style={{
@@ -113,6 +117,7 @@ export default function Header() {
             {isSuperAdmin && (
               <>
                 <Link
+                  id="btn-nav-superadmin"
                   to="/super-admin"
                   className="btn"
                   style={{
@@ -124,6 +129,7 @@ export default function Header() {
                   Super Panel
                 </Link>
                 <button
+                  id="btn-nav-logout"
                   className="btn"
                   style={{ border: "1px solid white", color: "white" }}
                   onClick={handleLogout}
@@ -137,6 +143,7 @@ export default function Header() {
             {isAdmin && !isSuperAdmin && (
               <>
                 <Link
+                  id="btn-nav-admin"
                   to="/admin"
                   className="btn"
                   style={{
@@ -148,6 +155,7 @@ export default function Header() {
                   Panel
                 </Link>
                 <button
+                  id="btn-nav-logout"
                   className="btn"
                   style={{ border: "1px solid white", color: "white" }}
                   onClick={handleLogout}
@@ -165,6 +173,7 @@ export default function Header() {
                 </span>
 
                 <Link
+                  id="btn-nav-micuenta"
                   to="/mi-cuenta"
                   className="btn"
                   style={{ border: "1px solid white", color: "white" }}
@@ -173,6 +182,7 @@ export default function Header() {
                 </Link>
 
                 <button
+                  id="btn-nav-logout"
                   className="btn"
                   style={{ border: "1px solid white", color: "white" }}
                   onClick={handleLogout}

@@ -169,6 +169,9 @@ export default function Home() {
                       maxHeight: "100%",
                       width: "auto",
                     }}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=500&auto=format&fit=crop&q=80";
+                    }}
                   />
                 </div>
               )}

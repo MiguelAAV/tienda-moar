@@ -158,6 +158,9 @@ export default function Productos() {
                           maxHeight: "100%",
                           width: "auto"
                         }}
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=500&auto=format&fit=crop&q=80";
+                        }}
                       />
                     </div>
                   )}
@@ -192,6 +195,7 @@ export default function Productos() {
                       </Link>
 
                       <button
+                        id={`btn-add-cart-${producto.id}`}
                         className="btn btn-primary btn-sm"
                         onClick={() => {
                           add(producto);
