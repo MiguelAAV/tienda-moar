@@ -41,8 +41,18 @@ const API_BASE_URL =
 const AuthContext = createContext<AuthContextProps | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<AuthUser | null>(null);
-  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser] = useState<AuthUser | null>(() => {
+    try {
+      const storedUser = localStorage.getItem("authUser");
+      const storedToken = localStorage.getItem("token");
+      return (storedUser && storedToken) ? JSON.parse(storedUser) : null;
+    } catch {
+      return null;
+    }
+  });
+  const [token, setToken] = useState<string | null>(() => {
+    return localStorage.getItem("token");
+  });
 
   // Cargar sesión desde localStorage al iniciar
 useEffect(() => {

@@ -1,6 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
 import { Link, useLocation, useOutletContext } from "react-router-dom";
-import type { Product } from "../assets/products";
 import { useProducts } from "../context/ProductContext";
 import { useCart } from "../context/CartContext";
 

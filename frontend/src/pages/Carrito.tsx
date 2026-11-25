@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useCart } from '../context/CartContext'
+import { useCart, type CartLine } from '../context/CartContext'
 import { apiFetch } from '../api'
 import { calcularSubtotal } from '../utils/cart'
 
@@ -29,7 +29,7 @@ type Boleta = {
 }
 
 export default function Carrito() {
-  const { state, add, removeOne, removeLine, clear, subtotal } = useCart()
+  const { state, add, removeOne, removeLine, clear } = useCart()
   const lines = Object.values(state.items)
 
   const [boleta, setBoleta] = useState<Boleta | null>(null)
@@ -54,7 +54,7 @@ export default function Carrito() {
     const payload = {
       clienteNombre: 'Cliente Tienda MoAr',
       clienteEmail: '',
-      items: lines.map(({ product, qty }: any) => ({
+      items: lines.map(({ product, qty }: CartLine) => ({
         productId: product.id,
         nombre: product.nombre,
         cantidad: qty,
@@ -81,7 +81,7 @@ export default function Carrito() {
     } catch (err) {
       console.error(err)
       // Fallback: boleta SOLO visual en el navegador
-      const itemsLocal: BoletaItem[] = lines.map(({ product, qty }: any) => ({
+      const itemsLocal: BoletaItem[] = lines.map(({ product, qty }: CartLine) => ({
         productoNombre: product.nombre,
         cantidad: qty,
         precioUnitario: product.precioNum ?? 0,
@@ -124,7 +124,7 @@ export default function Carrito() {
             </tr>
           </thead>
           <tbody>
-            {lines.map(({ product, qty }: any) => (
+            {lines.map(({ product, qty }: CartLine) => (
               <tr key={product.id}>
                 <td>
                   <div className="d-flex align-items-center gap-3">
@@ -192,7 +192,7 @@ export default function Carrito() {
               <td className="text-end fw-bold">
   {fmtCLP(
     calcularSubtotal(
-      lines.map((l: any) => ({
+      lines.map((l: CartLine) => ({
         precioUnitario: l.product.precioNum ?? 0,
         cantidad: l.qty
       }))

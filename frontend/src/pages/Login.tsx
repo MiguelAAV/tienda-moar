@@ -14,7 +14,11 @@ export default function Login() {
     e.preventDefault();
     setError("");
 
-    const loggedUser = await login(email, pass);
+    // Fallback directo al DOM en caso de que Selenium/automation haya seteado el value sin evento react
+    const emailVal = email || (document.getElementById("login-email") as HTMLInputElement)?.value || "";
+    const passVal = pass || (document.getElementById("login-password") as HTMLInputElement)?.value || "";
+
+    const loggedUser = await login(emailVal, passVal);
     if (!loggedUser) {
       setError("Credenciales incorrectas");
       return;

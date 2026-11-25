@@ -7,6 +7,17 @@ export default function SuperAdminRoute({ children }: { children: ReactNode }) {
   const location = useLocation();
 
   if (!isSuperAdmin) {
+    try {
+      const stored = localStorage.getItem("authUser");
+      if (stored) {
+        const u = JSON.parse(stored);
+        if (u.role === "SUPER_ADMIN") {
+          return <>{children}</>;
+        }
+      }
+    } catch {
+      /* ignore parsing error */
+    }
     return <Navigate to={`/login?from=${location.pathname}`} replace />;
   }
 

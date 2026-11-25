@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node / Frontend
 node_modules
 **/node_modules/
 dist
@@ -18,6 +19,21 @@ backend/target/
 **/target/
 *.class
 
+# Python cache & temporary scripts
+__pycache__/
+*.py[cod]
+*$py.class
+*.ps1
+
+# JMeter run output logs
+*.jtl
+
+# Office lock & temporary files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.tmp
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -28,4 +44,3 @@ backend/target/
 *.njsproj
 *.sln
 *.sw?
-

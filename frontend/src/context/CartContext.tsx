@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useReducer, ReactNode } from 'react'
 import type { Product } from '../assets/products'
 
-type CartLine = {
+export type CartLine = {
   product: Product
   qty: number
 }

@@ -106,7 +106,7 @@ export default function RegistroCliente() {
       });
 
       setTimeout(() => navigate("/login"), 1000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(
         err instanceof Error
           ? err.message || "No se pudo completar el registro."
