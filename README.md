@@ -64,7 +64,7 @@ tienda-moar/
 │       ├── INFORME_PARCIAL_3_2_TIENDA_MOAR_FINAL.pdf   # Informe Oficial de Certificación (86 páginas)
 │       ├── INFORME_PARCIAL_3_2_TIENDA_MOAR_FINAL.docx  # Documento editable oficial
 │       ├── Matriz_Ejecucion_Casos_Prueba_TiendaMoAr_Final.xlsx  # Matriz RTM y Dashboard de 46 casos
-│       └── Evidencias - Prueba 3/                      # Capturas de ejecución y trazabilidad
+│       └── Evidencias - Prueba 3/                      # Capturas, plan JMX (JMeter) y suites SIDE (Selenium)
 ├── .gitignore                           # Exclusiones de dependencias, temporales y builds
 └── README.md                            # Guía de instalación, uso y certificación técnica
 ```
@@ -215,8 +215,8 @@ El proyecto fue auditado exhaustivamente bajo una tríada integral de aseguramie
   * **Throughput:** **78.5 transacciones por segundo**.
 
 ### 4. Automatización de Flujos E2E (Selenium IDE)
-* **Archivo de Suite:** `Documentación/Prueba 2/Evidencias - Prueba 2/Selenium/TiendaMoAr_Selenium_usuarioComun.side`
-* **Alcance:** Recorrido automatizado completo de navegación, autenticación, adición al carrito, aplicación de cupones y cierre de sesión.
+* **Archivo de Suite:** [Documentación/Prueba 3/Evidencias - Prueba 3/TiendaMoAr_Selenium_usuarioComun.side](Documentación/Prueba%203/Evidencias%20-%20Prueba%203/TiendaMoAr_Selenium_usuarioComun.side) *(disponible también en `Prueba 2/`)*
+* **Alcance:** Recorrido automatizado completo de navegación, autenticación, adición al carrito, aplicación de cupones y cierre de sesión (4 suites, 46 comandos registrados y aprobados).
 
 ---
 

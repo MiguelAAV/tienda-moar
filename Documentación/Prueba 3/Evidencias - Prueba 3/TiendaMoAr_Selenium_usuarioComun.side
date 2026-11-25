@@ -1,0 +1,861 @@
+{
+  "id": "51cad0f1-cbb0-4fdd-825f-8e30760f68bc",
+  "version": "2.0",
+  "name": "TiendaMoAr_Selenium_usuarioComun",
+  "url": "http://localhost:5173",
+  "tests": [
+    {
+      "id": "6db46072-add0-4492-bce9-614d52f4dc51",
+      "name": "UsuarioComprador_Ingreso_y_Carrito",
+      "commands": [
+        {
+          "id": "601888f8-c35c-4e1e-bc58-fbf0e7c3a0a8",
+          "comment": "Abrir página principal",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "fd2d3a78-f5d7-464c-a320-57e92013c08a",
+          "comment": "Sanitizar sesión previa (Idempotencia QA)",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d9714447-c00b-4246-8acd-132d76b55f9f",
+          "comment": "Navegar a login",
+          "command": "open",
+          "target": "/login",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2c4228cf-5a07-4cae-9015-8d8388236949",
+          "comment": "",
+          "command": "click",
+          "target": "id=login-email",
+          "targets": [
+            [
+              "id=login-email",
+              "id"
+            ],
+            [
+              "css=#login-email",
+              "css:finder"
+            ],
+            [
+              "xpath=//input[@id='login-email']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div/form/input",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//main/div/div/form/input",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "6c800b72-4cf9-48e8-ac20-956700af220f",
+          "comment": "",
+          "command": "executeScript",
+          "target": "document.getElementById('login-email').value='cliente.moar@tienda.com'; document.getElementById('login-email').dispatchEvent(new Event('input', {bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "54b7d56a-1115-4000-a272-f9409e09237f",
+          "comment": "",
+          "command": "click",
+          "target": "id=login-password",
+          "targets": [
+            [
+              "id=login-password",
+              "id"
+            ],
+            [
+              "css=#login-password",
+              "css:finder"
+            ],
+            [
+              "xpath=//input[@id='login-password']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div/form/input[2]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//input[2]",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "ba7ba3e9-db8d-470f-8f4e-a12a1e0c2f9a",
+          "comment": "",
+          "command": "executeScript",
+          "target": "document.getElementById('login-password').value='cliente123'; document.getElementById('login-password').dispatchEvent(new Event('input', {bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "812d414a-91e4-4eb0-a56c-cb2e12c41757",
+          "comment": "",
+          "command": "click",
+          "target": "id=login-submit-btn",
+          "targets": [
+            [
+              "id=login-submit-btn",
+              "id"
+            ],
+            [
+              "css=#login-submit-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=//button[@id='login-submit-btn']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div/form/button",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//main/div/div/form/button",
+              "xpath:position"
+            ],
+            [
+              "xpath=//button[contains(.,'Ingresar')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "589ef4ae-812a-4185-ba70-9b20135d0823",
+          "comment": "",
+          "command": "click",
+          "target": "id=btn-nav-micuenta",
+          "targets": [
+            [
+              "id=btn-nav-micuenta",
+              "id"
+            ],
+            [
+              "linkText=Mi Cuenta",
+              "linkText"
+            ],
+            [
+              "css=#btn-nav-micuenta",
+              "css:finder"
+            ],
+            [
+              "xpath=//a[contains(text(),'Mi Cuenta')]",
+              "xpath:link"
+            ],
+            [
+              "xpath=//a[@id='btn-nav-micuenta']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//div[@id='root']/div/header/div/div/div[3]/a[2]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//a[contains(@href, '/mi-cuenta')]",
+              "xpath:href"
+            ],
+            [
+              "xpath=//div[3]/a[2]",
+              "xpath:position"
+            ],
+            [
+              "xpath=//a[contains(.,'Mi Cuenta')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "434672e7-4097-4e53-bbd5-cbe73f5ad9c5",
+          "comment": "",
+          "command": "click",
+          "target": "id=btn-nav-micuenta",
+          "targets": [
+            [
+              "id=btn-nav-micuenta",
+              "id"
+            ],
+            [
+              "linkText=Mi Cuenta",
+              "linkText"
+            ],
+            [
+              "css=#btn-nav-micuenta",
+              "css:finder"
+            ],
+            [
+              "xpath=//a[contains(text(),'Mi Cuenta')]",
+              "xpath:link"
+            ],
+            [
+              "xpath=//a[@id='btn-nav-micuenta']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//div[@id='root']/div/header/div/div/div[3]/a[2]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//a[contains(@href, '/mi-cuenta')]",
+              "xpath:href"
+            ],
+            [
+              "xpath=//div[3]/a[2]",
+              "xpath:position"
+            ],
+            [
+              "xpath=//a[contains(.,'Mi Cuenta')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "5d6fb30f-f8bb-4082-8bb7-de011047011c",
+          "comment": "",
+          "command": "click",
+          "target": "linkText=Productos",
+          "targets": [
+            [
+              "linkText=Productos",
+              "linkText"
+            ],
+            [
+              "css=.nav-link:nth-child(2)",
+              "css:finder"
+            ],
+            [
+              "xpath=//a[contains(text(),'Productos')]",
+              "xpath:link"
+            ],
+            [
+              "xpath=//div[@id='root']/div/header/div/div/nav/a[2]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//a[contains(@href, '/productos')]",
+              "xpath:href"
+            ],
+            [
+              "xpath=//a[2]",
+              "xpath:position"
+            ],
+            [
+              "xpath=//a[contains(.,'Productos')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "pause-after-nav-prod",
+          "comment": "Esperar carga de catálogo",
+          "command": "pause",
+          "target": "1000",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "aad49fad-a00c-4352-884f-caa9e38b9804",
+          "comment": "",
+          "command": "mouseOver",
+          "target": "linkText=Productos",
+          "targets": [
+            [
+              "linkText=Productos",
+              "linkText"
+            ],
+            [
+              "css=.nav-link:nth-child(2)",
+              "css:finder"
+            ],
+            [
+              "xpath=//a[contains(text(),'Productos')]",
+              "xpath:link"
+            ],
+            [
+              "xpath=//div[@id='root']/div/header/div/div/nav/a[2]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//a[contains(@href, '/productos')]",
+              "xpath:href"
+            ],
+            [
+              "xpath=//a[2]",
+              "xpath:position"
+            ],
+            [
+              "xpath=//a[contains(.,'Productos')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "30616383-bb6f-4c82-b698-1e239c7bfc80",
+          "comment": "",
+          "command": "mouseOut",
+          "target": "linkText=Productos",
+          "targets": [
+            [
+              "linkText=Productos",
+              "linkText"
+            ],
+            [
+              "css=.nav-link:nth-child(2)",
+              "css:finder"
+            ],
+            [
+              "xpath=//a[contains(text(),'Productos')]",
+              "xpath:link"
+            ],
+            [
+              "xpath=//div[@id='root']/div/header/div/div/nav/a[2]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//a[contains(@href, '/productos')]",
+              "xpath:href"
+            ],
+            [
+              "xpath=//a[2]",
+              "xpath:position"
+            ],
+            [
+              "xpath=//a[contains(.,'Productos')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "6e0bcdf3-25ad-4256-b840-86f2225174d3",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=(//button[contains(.,'Añadir al carrito')])[1]",
+          "targets": [
+            [
+              "css=.col-md-6:nth-child(3) .btn:nth-child(2)",
+              "css:finder"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div[3]/div[3]/div/div[2]/div[2]/button",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//div[3]/div/div[2]/div[2]/button",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "97e6d335-9983-4549-b347-0f310eebf917",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=(//button[contains(.,'Añadir al carrito')])[2]",
+          "targets": [
+            [
+              "css=.col-md-6:nth-child(4) .btn:nth-child(2)",
+              "css:finder"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div[3]/div[4]/div/div[2]/div[2]/button",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//div[4]/div/div[2]/div[2]/button",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "cb867815-fd9e-44e5-9efc-4f0646a332f7",
+          "comment": "",
+          "command": "click",
+          "target": "css=.col-md-6:nth-child(8) .btn:nth-child(1)",
+          "targets": [
+            [
+              "css=.col-md-6:nth-child(8) .btn:nth-child(1)",
+              "css:finder"
+            ],
+            [
+              "xpath=(//a[contains(text(),'Ver más')])[8]",
+              "xpath:link"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div[3]/div[8]/div/div[2]/div[2]/a",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//a[contains(@href, '/producto/16')]",
+              "xpath:href"
+            ],
+            [
+              "xpath=//div[8]/div/div[2]/div[2]/a",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "3185ef3d-d3b0-4dad-bdb9-9fd3d72a0fb0",
+          "comment": "",
+          "command": "click",
+          "target": "css=.btn-primary",
+          "targets": [
+            [
+              "css=.btn-primary",
+              "css:finder"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div/div[2]/button",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//div[2]/button",
+              "xpath:position"
+            ],
+            [
+              "xpath=//button[contains(.,'Añadir al carrito')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "4e87e980-64d3-481b-8e40-41a5231c2711",
+          "comment": "",
+          "command": "click",
+          "target": "linkText=Ir al carrito",
+          "targets": [
+            [
+              "linkText=Ir al carrito",
+              "linkText"
+            ],
+            [
+              "css=.btn-outline-secondary",
+              "css:finder"
+            ],
+            [
+              "xpath=//a[contains(text(),'Ir al carrito')]",
+              "xpath:link"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div/div[2]/a",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=(//a[contains(@href, '/carrito')])[2]",
+              "xpath:href"
+            ],
+            [
+              "xpath=//div[2]/a",
+              "xpath:position"
+            ],
+            [
+              "xpath=//a[contains(.,'Ir al carrito')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "2df4326a-0e27-42a0-a0ec-6fc347bf9040",
+          "comment": "",
+          "command": "click",
+          "target": "css=tr:nth-child(1) .btn-outline-danger",
+          "targets": [
+            [
+              "css=tr:nth-child(1) .btn-outline-danger",
+              "css:finder"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div/table/tbody/tr/td[5]/button",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//td[5]/button",
+              "xpath:position"
+            ],
+            [
+              "xpath=//button[contains(.,'Eliminar')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "05636828-a2aa-4200-81a6-a76a0869b012",
+          "comment": "",
+          "command": "click",
+          "target": "css=tr:nth-child(2) .btn:nth-child(3)",
+          "targets": [
+            [
+              "css=tr:nth-child(2) .btn:nth-child(3)",
+              "css:finder"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div/table/tbody/tr[2]/td[2]/div/button[3]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//tr[2]/td[2]/div/button[3]",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "21f80927-a473-4848-bf8f-6237f00020f2",
+          "comment": "",
+          "command": "click",
+          "target": "css=.btn-primary",
+          "targets": [
+            [
+              "css=.btn-primary",
+              "css:finder"
+            ],
+            [
+              "xpath=//div[@id='root']/div/main/div/div[2]/button",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//div[2]/button",
+              "xpath:position"
+            ],
+            [
+              "xpath=//button[contains(.,'Proceder al pago')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "04bd29af-5f4a-49e0-a03f-14e380e8c2d3",
+      "name": "CP2_LoginFallido_CredencialesInvalidas",
+      "commands": [
+        {
+          "id": "0728b7f3-e571-4d77-9688-0a5b25fec982",
+          "comment": "Abrir página principal",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c4d14d2b-5d71-4e6e-81ea-b7a5e64acbe0",
+          "comment": "Sanitizar sesión previa",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2dfcf789-323b-41d8-8f84-6066a06fd736",
+          "comment": "Navegar a login",
+          "command": "open",
+          "target": "/login",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "fec84ce4-46a3-49a1-b464-723b88aabad1",
+          "comment": "Hacer click en email",
+          "command": "click",
+          "target": "id=login-email",
+          "targets": [
+            [
+              "id=login-email",
+              "id"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "a8c6f8ec-3625-4426-8d39-a6ece566621b",
+          "comment": "Tipear correo inválido",
+          "command": "executeScript",
+          "target": "document.getElementById('login-email').value='usuario.invalido@error.com'; document.getElementById('login-email').dispatchEvent(new Event('input', {bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "804c1510-3897-447d-94f2-fa7c636f6a89",
+          "comment": "Hacer click en password",
+          "command": "click",
+          "target": "id=login-password",
+          "targets": [
+            [
+              "id=login-password",
+              "id"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "3ba58dbe-b981-42e4-b960-7b9f9d04be8d",
+          "comment": "Tipear contraseña errónea",
+          "command": "executeScript",
+          "target": "document.getElementById('login-password').value='claveIncorrecta123'; document.getElementById('login-password').dispatchEvent(new Event('input', {bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "297f7e2b-4dc0-4886-ba8e-5ad3ba02b296",
+          "comment": "Click en Iniciar Sesión",
+          "command": "click",
+          "target": "id=login-submit-btn",
+          "targets": [
+            [
+              "id=login-submit-btn",
+              "id"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "e51c51e2-8913-45cc-a368-665da6e7b078",
+          "comment": "Pausa para validar respuesta",
+          "command": "pause",
+          "target": "1000",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "216cc724-2cf0-4dc2-9963-f2de411fa012",
+      "name": "CP3_CP8_Admin_AccesoYListadoProductos",
+      "commands": [
+        {
+          "id": "8ccb1669-d0e8-4686-9fb7-90f395e95c71",
+          "comment": "Abrir login",
+          "command": "open",
+          "target": "/login",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0334b591-1cac-4798-af63-93aa317a3b70",
+          "comment": "Sanitizar sesión previa",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "7fa60da9-764d-42c3-a075-b1599988ed1c",
+          "comment": "Click en email",
+          "command": "click",
+          "target": "id=login-email",
+          "targets": [
+            [
+              "id=login-email",
+              "id"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "e42fb64c-2124-447e-b94f-9b9cc0a09a52",
+          "comment": "Ingresar credencial admin",
+          "command": "executeScript",
+          "target": "document.getElementById('login-email').value='admin.moar@tienda.com'; document.getElementById('login-email').dispatchEvent(new Event('input', {bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "8ac3ea95-bb34-49c5-b882-2e5d545e041a",
+          "comment": "Click en password",
+          "command": "click",
+          "target": "id=login-password",
+          "targets": [
+            [
+              "id=login-password",
+              "id"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "5fa464c6-dd9a-4f17-b3dd-058f0d14e76a",
+          "comment": "Ingresar password admin",
+          "command": "executeScript",
+          "target": "document.getElementById('login-password').value='admin123'; document.getElementById('login-password').dispatchEvent(new Event('input', {bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "85a94976-b682-46b1-b2a2-53468c9730f9",
+          "comment": "Click en botón login",
+          "command": "click",
+          "target": "id=login-submit-btn",
+          "targets": [
+            [
+              "id=login-submit-btn",
+              "id"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "1ba02b4e-94fe-417d-be74-d4f713e3bbe3",
+          "comment": "Pausa para redirección a /admin",
+          "command": "pause",
+          "target": "1500",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "085c5401-338c-4607-9ba6-16881c1b1cc8",
+          "comment": "Navegar a Gestión de Productos",
+          "command": "open",
+          "target": "/admin",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "3769786f-4679-4242-b158-049e50339c5b",
+      "name": "CP11_SuperAdmin_GestionUsuariosYRoles",
+      "commands": [
+        {
+          "id": "4a3bad2a-a21f-4db1-81ea-cf01535d491d",
+          "comment": "Abrir login",
+          "command": "open",
+          "target": "/login",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "8817744e-0c4c-4a69-9081-28d79c2d411f",
+          "comment": "Sanitizar sesión previa",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "76a87e1c-9806-46f5-a1dd-643ec9e6770b",
+          "comment": "Click en email",
+          "command": "click",
+          "target": "id=login-email",
+          "targets": [
+            "id=login-email",
+            "id"
+          ],
+          "value": ""
+        },
+        {
+          "id": "5ea3e6fb-a8e4-4ef6-b2b7-4eb4ae79d803",
+          "comment": "Ingresar credencial SuperAdmin",
+          "command": "executeScript",
+          "target": "document.getElementById('login-email').value='superadmin@tienda.com'; document.getElementById('login-email').dispatchEvent(new Event('input', {bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "171f7161-8df4-4b3d-bc3e-27cebb92471b",
+          "comment": "Click en password",
+          "command": "click",
+          "target": "id=login-password",
+          "targets": [
+            "id=login-password",
+            "id"
+          ],
+          "value": ""
+        },
+        {
+          "id": "655399e1-a426-4bc6-ad4d-41b16b02688d",
+          "comment": "Ingresar clave SuperAdmin",
+          "command": "executeScript",
+          "target": "document.getElementById('login-password').value='super123'; document.getElementById('login-password').dispatchEvent(new Event('input', {bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "703c0cec-249c-4b1d-b55a-991c1a78f2b6",
+          "comment": "Click en submit login",
+          "command": "click",
+          "target": "id=login-submit-btn",
+          "targets": [
+            "id=login-submit-btn",
+            "id"
+          ],
+          "value": ""
+        },
+        {
+          "id": "adf1da62-457c-4bba-b9b6-ef96af8a8ff3",
+          "comment": "Pausa para autenticación",
+          "command": "pause",
+          "target": "1500",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0f64ec0a-4af2-4afa-9cd4-058a388a13bf",
+          "comment": "Navegar a /super-admin",
+          "command": "open",
+          "target": "/super-admin",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2b49848-0575-4cfa-8d9b-cd91e4dd9d18",
+          "comment": "Verificar presencia del encabezado del Panel Super Admin",
+          "command": "assertElementPresent",
+          "target": "css=h1",
+          "targets": [
+            "css=h1",
+            "css:finder"
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "70573a44-8bb3-48c5-98f4-3e65ac6147ca",
+      "name": "Default Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "6db46072-add0-4492-bce9-614d52f4dc51",
+        "04bd29af-5f4a-49e0-a03f-14e380e8c2d3",
+        "216cc724-2cf0-4dc2-9963-f2de411fa012",
+        "3769786f-4679-4242-b158-049e50339c5b"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:5173/"
+  ],
+  "plugins": []
+}
